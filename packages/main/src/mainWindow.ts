@@ -1,4 +1,4 @@
-import {app, BrowserWindow} from 'electron';
+import {app, BrowserWindow, globalShortcut, crashReporter} from 'electron';
 import {join} from 'path';
 import {URL} from 'url';
 
@@ -13,6 +13,18 @@ async function createWindow() {
       preload: join(app.getAppPath(), 'packages/preload/dist/index.cjs'),
     },
   });
+
+   // 打开开发者工具
+   globalShortcut.register('CommandOrControl+I', () => {
+    browserWindow?.webContents.openDevTools();
+  });
+
+  // https://www.zhihu.com/question/54091307
+  crashReporter.start({
+    submitURL: '',
+    uploadToServer: false,
+  });
+
 
   /**
    * If the 'show' property of the BrowserWindow's constructor is omitted from the initialization options,
