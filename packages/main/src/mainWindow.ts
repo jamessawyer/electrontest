@@ -14,8 +14,8 @@ async function createWindow() {
     },
   });
 
-   // 打开开发者工具
-   globalShortcut.register('CommandOrControl+I', () => {
+  // 打开开发者工具
+  globalShortcut.register('CommandOrControl+I', () => {
     browserWindow?.webContents.openDevTools();
   });
 
@@ -24,7 +24,6 @@ async function createWindow() {
     submitURL: '',
     uploadToServer: false,
   });
-
 
   /**
    * If the 'show' property of the BrowserWindow's constructor is omitted from the initialization options,

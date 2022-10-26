@@ -19,7 +19,7 @@ if (process.env.VITE_APP_VERSION === undefined) {
   )}`;
 }
 
-const PRODUCT_NAME = '优职教2'
+const PRODUCT_NAME = '优职教2';
 
 /**
  * @type {import('electron-builder').Configuration}
@@ -44,18 +44,18 @@ const config = {
       {
         x: 410,
         y: 150,
-        type: "link",
-        path: "/Applications",
+        type: 'link',
+        path: '/Applications',
       },
       {
         x: 130,
         y: 150,
-        type: "file",
+        type: 'file',
       },
     ],
     window: {
       height: 380,
-      width: 540
+      width: 540,
     },
   },
   mac: {
@@ -63,9 +63,10 @@ const config = {
     icon: 'buildResources/icon.icns',
     // 应用程序包名
     artifactName: '${productName}_${platform}_${arch}_${version}.${ext}',
-    target: [ // 要打的包的格式类型设置
-        'dmg',
-        'zip' // 这里注意更新的时候，mac只认zip格式的包
+    target: [
+      // 要打的包的格式类型设置
+      'dmg',
+      'zip', // 这里注意更新的时候，mac只认zip格式的包
     ],
   },
   win: {
@@ -77,10 +78,10 @@ const config = {
         target: 'nsis',
         // 这个意思是打出来32 bit + 64 bit的包，但是要注意：这样打包出来的安装包体积比较大，所以建议直接打32的安装包。
         arch: [
-        // 'x64',
-          'ia32'
-        ]
-      }
+          // 'x64',
+          'ia32',
+        ],
+      },
     ],
     // 打出来的包，自动获取管理员权限，不建议打开
     // requestedExecutionLevel: 'highestAvailable',
@@ -107,8 +108,8 @@ const config = {
     // 创建桌面图标
     createDesktopShortcut: true,
     // 创建开始菜单图标
-    createStartMenuShortcut: true
-  }
+    createStartMenuShortcut: true,
+  },
 };
 
 module.exports = config;
